@@ -14,15 +14,11 @@ public class Application {
 
     public Result run(String[] args) {
         //encode text.txt encode.txt 12
-        try {
+        if (args.length > 0) {
             String action = args[0]; //encode
             String[] parameters = Arrays.copyOfRange(args, 1, args.length); //parameters text.txt encode.txt 12
-            Result result = mainController.doAction(action, parameters);
-            return result;
-        } catch (Exception e) {
-            throw new AppException("Ошибка в классе Application");
+            return mainController.doAction(action, parameters);
         }
-
-
+        throw new AppException("Ошибка в классе Application");
     }
 }

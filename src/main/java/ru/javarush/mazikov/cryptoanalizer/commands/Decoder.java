@@ -7,6 +7,6 @@ public class Decoder implements Action {
     @Override
     public Result execute(String[] parameters) {
         //TODO something
-        return new Result("All right", ResultCode.OK);
+        return new Result("Decode all right", ResultCode.OK);
     }
 }

@@ -19,10 +19,9 @@ public enum Actions {
     public static Action find(String actionName) {
         try {
             Actions value = Actions.valueOf(actionName.toUpperCase());
-            Action action = value.action;
-            return action;
+            return value.action;
         } catch (IllegalArgumentException e) {
-            throw new AppException("Can't find a command: " + actionName);
+            throw new AppException("Can't find a command: " + actionName, e);
         }
 
     }
